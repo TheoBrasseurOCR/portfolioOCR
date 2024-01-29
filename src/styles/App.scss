@@ -1,0 +1,406 @@
+@import './variables';
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $bg-color;
+}
+
+.header, .home-header {
+  background-color: $secondary-color;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  a {
+    color: white;
+    text-decoration: none;
+    margin: 0 30px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.show-link {
+      opacity: 1;
+    }
+
+    &:visited {
+      color: white;
+    }
+
+    &:hover {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+}
+
+.about, .skills, .projects, .apropos {
+  padding: 40px 0;
+}
+
+/* Styles pour les cartes */
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 120px;
+  opacity: 0;
+  animation: fadeInLeft 1s ease-in-out forwards, slideInLeft 1s ease-in-out forwards;
+
+  @keyframes fadeInLeft {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+.cards {
+  flex: 0 0 calc(20% - 20px);
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid $like-black;
+  border-radius: 10px;
+  background-color: $third-color;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  max-height: 500px;
+  transition: background-color 0.5s ease, opacity 0.5s ease, max-height 0.5s ease;
+
+  &:hover {
+    background-color: $third-color;
+    opacity: 0.7;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, white, transparent);
+      transform: translateX(-100%);
+      animation: gradientAnimation 0.3s linear;
+      opacity: 0.2;
+    }
+  }
+
+  h3, p {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: $primary-color;
+  }
+
+  @keyframes gradientAnimation {
+    to { transform: translateX(100%); }
+  }
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-around;
+  margin-left: 10px;
+  color: $primary-color;
+}
+
+.image-container img {
+  padding-top: 20px;
+  width: calc(49% - 50px);
+  height: auto;
+  color: $like-black;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image-container img {
+    width: 100%;
+  }
+}
+
+.custom-modal {
+  /* Ajoute tes styles personnalisés ici */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-color;
+  padding: 20px;
+  height: 60%; /* Ajuste la hauteur selon tes besoins */
+  width: 60%; /* Ajuste la largeur selon tes besoins */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1.3px solid $like-black;
+  border-radius: 15% 15% 15% 15% / 15% 15% 15% 15%;
+  overflow: hidden;
+  animation: opacity 0.5s ease;
+  box-shadow: 0px 10px 18px -7px $like-black;
+
+  @keyframes opacity {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  h3 {
+    text-align: center; /* Centrer le texte horizontalement */
+    max-width: 100%; /* Ajuste la largeur maximale du texte selon tes besoins */
+    margin: 0 auto; /* Centrer le texte horizontalement */
+    overflow: hidden; /* Cacher le texte qui dépasse de la boîte */
+    width: 80%;
+    height: auto;
+  }
+
+  /* Styles pour l'icône de fermeture */
+  .close-button {
+    position: absolute;
+    bottom: 20%; /* Ajuste la distance depuis le bas */
+    right: 50%;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: $like-black;
+
+    &:hover {
+      transform: scale(1.3);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
+
+// card accueil
+
+/* Styles pour les cartes */
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 120px;
+  opacity: 0;
+  animation: fadeInLeft 1s ease-in-out forwards, slideInLeft 1s ease-in-out forwards;
+
+  @keyframes fadeInLeft {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+.homeCard {
+  flex: 0 0 calc(20% - 20px);
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid $like-black;
+  border-radius: 10px;
+  background-color: $third-color;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column; /* Changement ici pour mettre les éléments en colonne */
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
+
+  &:hover {
+    background-color: $third-color;
+    opacity: 0.7;
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, white, transparent);
+      transform: translateX(-100%);
+      animation: gradientAnimation 0.3s linear;
+      opacity: 0.2;
+    }
+  }
+
+  p {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: $primary-color;
+    }
+
+  h3 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: $primary-color;
+    text-align: center; /* Centre le texte horizontalement */
+  }
+
+  @keyframes gradientAnimation {
+    to { transform: translateX(100%); }
+  }
+
+  .home-icon-container {
+    margin-top: 15%; /* Ajustement de la marge entre le h3 et le conteneur d'image */
+  }
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.homeCard.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+// formulaire
+
+.contact {
+  background-color: $bg-color;
+  padding: 20px;
+
+  .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+
+    h2 {
+      text-align: center;
+      color: $like-black;
+    }
+
+    p {
+      text-align: center;
+      color: $like-black;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: grid;
+      grid-gap: 10px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: $like-black;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $like-black;
+        border-radius: 5px;
+        margin-bottom: 10px;
+
+        &:focus {
+          outline: none;
+          border-color: $like-black;
+        }
+      }
+
+      button {
+        width: 25%;
+        background-color: $secondary-color;
+        color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+    }
+  }
+}
+
+.apropos-links {
+
+  a {
+    margin: 0 10px;
+    color: $secondary-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// imagesphoto
+
+.img-container {
+  display: flex;
+  flex-direction: column; /* Si vous voulez que les éléments soient empilés verticalement */
+  align-items: center;
+  justify-content: center;
+  animation: fadeInLeft 1s ease-in-out forwards, slideInLeft 1s ease-in-out forwards;
+}
+
+/* Conteneur de la photo de profil */
+.profile-photo-container {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 7%;
+  border: 0.05px solid $like-black;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mentions-legales, .cgu {
+h1 {
+  margin-left: 20px;
+  margin-right: 20px;
+  color: $secondary-color;
+}
+p {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+}
+
+
+
+
+
+
+
+
+

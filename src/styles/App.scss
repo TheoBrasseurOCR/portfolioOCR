@@ -61,7 +61,7 @@ nav {
   }
 }
 
-.cards {
+.cards, .proj-card {
   flex: 0 0 calc(20% - 20px);
   padding: 20px;
   margin-bottom: 20px;
@@ -74,9 +74,17 @@ nav {
   max-height: 500px;
   transition: background-color 0.5s ease, opacity 0.5s ease, max-height 0.5s ease;
 
+  h5 {
+    color: $secondary-color;
+    text-decoration: none;
+  }
+
   &:hover {
     background-color: $third-color;
     opacity: 0.7;
+    color: $like-black;
+    text-decoration: underline;
+    font-style: italic;
 
     &::before {
       content: "";
@@ -292,6 +300,12 @@ nav {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    animation: fadeInLeft 1s ease-in-out forwards, slideInLeft 1s ease-in-out forwards;
+
+    @keyframes fadeInLeft {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
     h2 {
       text-align: center;
@@ -384,17 +398,44 @@ nav {
   left: 0;
 }
 
-.mentions-legales, .cgu {
-h1 {
+.mentions-legales, .cgu, .projects, .kasa, .mvg, .nina-carducci, .sophie-b {
+h1, h2 {
   margin-left: 20px;
   margin-right: 20px;
   color: $secondary-color;
+  animation: fadeInLeft 1s ease-in-out forwards, slideInLeft 1s ease-in-out forwards;
+
+  @keyframes fadeInLeft {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 }
 p {
+  max-width: 70%;
   margin-left: 30px;
   margin-right: 30px;
+  animation: fadeInLeft 1s ease-in-out forwards, slideInLeft 1s ease-in-out forwards;
+
+  @keyframes fadeInLeft {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 }
 }
+
+
+
+.img-proj {
+  width: 100%; /* Ou une taille fixe en pixels */
+  height: auto
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
 
 
 

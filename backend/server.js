@@ -16,7 +16,7 @@ app.use(cors());
 
 // Configuration pour l'envoi d'e-mails avec nodemailer
 const transporter = nodemailer.createTransport({
-  service: 'hotmail',
+  service: process.env.SERV,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,

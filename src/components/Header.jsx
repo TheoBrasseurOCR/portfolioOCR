@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Typed from 'typed.js';
-import '../styles/App.scss';
 
 const Header = () => {
   useEffect(() => {

@@ -1,17 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-// Composant pour une carte (Card)
-const CustomCard = ({ title, imageSrc, link }) => {
-  return (
-    <div className="proj-card">
-      <Link to={link}>
-      <img src={imageSrc} alt={title} className='img-proj'/>
-      <h5>en savoir plus</h5>
-      </Link>
-    </div>
-  );
-};
+import { Pcards } from '../components/Cards';
 
 const Projects = () => {
   // Liste de vos projets avec les titres et chemins d'image
@@ -45,7 +33,7 @@ const Projects = () => {
         {/* Section des cartes */}
         <div className="cards-container">
           {projectsList.map((project, index) => (
-            <CustomCard key={index} title={project.title} imageSrc={project.imageSrc} link={project.link} />
+            <Pcards key={index} title={project.title} imageSrc={project.imageSrc} link={project.link} />
           ))}
         </div>
       </div>

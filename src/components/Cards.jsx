@@ -1,9 +1,64 @@
 import React, { useState } from 'react';
+import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons'; // Importe l'icône de croixs
 import { faAddressCard, faGraduationCap, faMusic, faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import '../styles/App.scss'; // Assurez-vous d'importer le fichier CSS pour les styles
+import { Link } from 'react-router-dom';
 
-const HomeCard = ({ title, content }) => {
+// Composant pour une carte (Card)
+const Scards = ({ title, images }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleOpenModal = (image) => {
+    setSelectedImage(image);
+    setModalIsOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImage(null);
+    setModalIsOpen(false);
+  };
+
+  return (
+    <div className="cards">
+      <h3>{title}</h3>
+      <div className="cards-content">
+        <div className="image-container">
+          {images.map((image, index) => (
+            <img
+              key={index}
+              src={image.src}
+              alt={image.alt}
+              onClick={() => handleOpenModal(image)}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Modale */}
+<Modal
+  isOpen={modalIsOpen}
+  onRequestClose={handleCloseModal}
+  contentLabel="Image Modal"
+  className="custom-modal"
+>
+  {selectedImage && (
+    <div>
+      {/* Icône de croix pour fermer la modale */}
+      <button className="close-button" onClick={handleCloseModal}>
+        <FontAwesomeIcon icon={faTimes} />
+      </button>
+
+      <h3>{selectedImage.text}</h3>
+    </div>
+  )}
+</Modal>
+    </div>
+  );
+};
+
+const Hcards = ({ title, content }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleCardClick = () => {
@@ -58,19 +113,20 @@ const HomeCard = ({ title, content }) => {
   );
 };
 
-const Home = () => {
+// Composant pour une carte (Card)
+const Pcards = ({ title, imageSrc, link }) => {
   return (
-    <div className="home-container">
-      <div className="right-section">
-        <div className="card-container">
-          <HomeCard title="<Présentation />" content="Je suis Théo Brasseur, un développeur web Full-Stack de 27 ans basé à Lille, en France. Mon expertise technique s'accompagne d'un excellent niveau d'anglais, me permettant de travailler efficacement à l'international." />
-          <HomeCard title="<Diplômes />" content="Je détiens un diplôme Bac+2 en développement web obtenu auprès d'Openclassrooms. Mon parcours académique inclut également un Baccalauréat Littéraire avec une spécialisation en Anglais Européen, attestant d'un niveau d'anglais A2." />
-          <HomeCard title="<Passions />" content="Passionné par la musique, les nouvelles technologies et le sport individuel, ces domaines enrichissent ma vie quotidienne et alimentent ma curiosité." />
-          <HomeCard title="<Expériences />" content="Dessinateur projeteur à mes débuts, j'ai ensuite évolué en tant que chargé de projet dans le domaine de la méthanisation. Par la suite, j'ai dirigé ma propre entreprise pendant deux ans, de 2022 à 2024, avant de me lancer dans une reconversion professionnelle." />
-        </div>
-      </div>
+    <div className="proj-card">
+      <Link to={link}>
+      <img src={imageSrc} alt={title} className='img-proj'/>
+      <h5>en savoir plus</h5>
+      </Link>
     </div>
   );
 };
 
-export default Home;
+export { Scards, Hcards, Pcards };
+
+
+
+

@@ -1,0 +1,9 @@
+@import '../styles/variables.scss';
+
+.header,
+.home-header {
+  background-color: $secondary-color;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}

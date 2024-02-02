@@ -1,39 +1,8 @@
-@import '../styles/variables.scss';
-
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
   background-color: $bg-color;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-
-  a {
-    color: white;
-    text-decoration: none;
-    margin: 0 30px;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    cursor: pointer;
-
-    &.show-link {
-      opacity: 1;
-    }
-
-    &:visited {
-      color: white;
-    }
-
-    &:hover {
-      color: white;
-      text-decoration: underline;
-    }
-  }
 }
 
 .about,
@@ -83,4 +52,14 @@ nav {
       }
     }
   }
+  a {
+    color: $secondary-color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
 }

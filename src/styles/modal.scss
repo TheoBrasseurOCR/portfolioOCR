@@ -1,5 +1,3 @@
-@import '../styles/variables.scss';
-
 .custom-modal {
   display: flex;
   flex-direction: column;
@@ -35,6 +33,13 @@
     overflow: hidden;
     width: 80%;
     height: auto;
+  }
+
+  .modal-content {
+    h3 {
+      color: $like-black;
+      white-space: pre-line;
+    }
   }
 
   /* Styles pour l'icône de fermeture */

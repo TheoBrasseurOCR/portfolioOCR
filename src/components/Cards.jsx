@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons'; // Importe l'icône de croixs
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faAddressCard, faGraduationCap, faMusic, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-// Composant pour une carte (Card)
+// Composant pour une carte (Skills)
 const Scards = ({ title, images }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -44,8 +44,7 @@ const Scards = ({ title, images }) => {
   className="custom-modal"
 >
   {selectedImage && (
-    <div>
-      {/* Icône de croix pour fermer la modale */}
+    <div className='modal-content'>
       <button className="close-button" onClick={handleCloseModal}>
         <FontAwesomeIcon icon={faTimes} />
       </button>
@@ -58,6 +57,7 @@ const Scards = ({ title, images }) => {
   );
 };
 
+// Composant pour une carte (Home)
 const Hcards = ({ title, content }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -113,7 +113,7 @@ const Hcards = ({ title, content }) => {
   );
 };
 
-// Composant pour une carte (Card)
+// Composant pour une carte (Projets)
 const Pcards = ({ title, imageSrc, link }) => {
   return (
     <div className="proj-card">

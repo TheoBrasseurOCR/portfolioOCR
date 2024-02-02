@@ -1,5 +1,3 @@
-@import '../styles/variables.scss';
-
 // CARDS ACCUEIL
 .card-container {
   display: flex;
@@ -19,89 +17,172 @@
       opacity: 1;
     }
   }
-}
 
-.homeCard {
-  flex: 0 0 calc(20% - 20px);
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 1px solid $like-black;
-  border-radius: 10px;
-  background-color: $third-color;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  width: 250px;
-  height: 250px;
-  perspective: 1000px;
-
-  &:hover {
+  .homeCard {
+    flex: 0 0 calc(20% - 20px);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid $like-black;
+    border-radius: 10px;
     background-color: $third-color;
-    opacity: 0.7;
-    transform: scale(1.05);
-    transition: transform 0.5s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    perspective: 1000px;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, transparent, white, transparent);
-      transform: translateX(-100%);
-      animation: gradientAnimation 0.3s linear;
-      opacity: 0.2;
+    &:hover {
+      background-color: $third-color;
+      opacity: 0.7;
+      transform: scale(1.05);
+      transition: transform 0.5s ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, white, transparent);
+        transform: translateX(-100%);
+        animation: gradientAnimation 0.3s linear;
+        opacity: 0.2;
+      }
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: $primary-color;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 35px;
+      margin-bottom: 10px;
+      color: $primary-color;
+      text-align: center;
+    }
+
+    @keyframes gradientAnimation {
+      to {
+        transform: translateX(100%);
+      }
+    }
+
+    .home-icon-container {
+      margin-top: 15%;
     }
   }
 
-  p {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: $primary-color;
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
   }
 
-  h3 {
-    font-size: 35px;
-    margin-bottom: 10px;
-    color: $primary-color;
-    text-align: center;
+  .homeCard.flipped .card-inner {
+    transform: rotateY(180deg);
   }
 
-  @keyframes gradientAnimation {
-    to {
-      transform: translateX(100%);
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+  }
+
+  @media screen and (min-width: 1270px) {
+    .homeCard {
+      width: 200px;
+      height: 200px;
+
+      h3 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: $primary-color;
+        text-align: center;
+      }
     }
   }
 
-  .home-icon-container {
-    margin-top: 15%;
+  @media screen and (min-width: 1024px) and (max-width: 1270px) {
+    .homeCard {
+      width: 150px;
+      height: 150px;
+
+      h3 {
+        font-size: 23px;
+      }
+
+      p {
+        font-size: 13px;
+        margin-bottom: 5px;
+        color: $primary-color;
+        text-align: center;
+      }
+    }
   }
-}
 
-.card-inner {
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-}
+  @media screen and (min-width: 481px) and (max-width: 1023px) {
+    margin-top: 30px;
 
-.homeCard.flipped .card-inner {
-  transform: rotateY(180deg);
-}
+    .homeCard {
+      flex: 0 0 calc(50% - 40px);
+      width: 150px;
+      height: 150px;
 
-.card-front,
-.card-back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-}
+      h3 {
+        font-size: 25px;
+      }
+      .home-icon-container {
+        margin-top: 30px;
+      }
+      p {
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: $primary-color;
+        text-align: center;
+      }
+    }
+  }
 
-.card-back {
-  transform: rotateY(180deg);
+  @media screen and (max-width: 480px) {
+    margin-top: 30px;
+
+    .homeCard {
+      flex: 0 0 calc(50% - 40px);
+      width: 150px;
+      height: 100px;
+
+      h3 {
+        font-size: 15px;
+      }
+      .home-icon-container {
+        margin-top: 30px;
+      }
+      p {
+        font-size: 9px;
+        margin-bottom: 5px;
+        color: $primary-color;
+        text-align: center;
+      }
+    }
+  }
 }
 
 // CARDS PROJETS
@@ -186,7 +267,7 @@
 }
 
 .img-proj {
-  width: 100%; /* Ou une taille fixe en pixels */
+  width: 100%;
   height: auto;
 }
 

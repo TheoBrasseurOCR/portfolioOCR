@@ -221,8 +221,13 @@
     max-height 0.5s ease;
 
   h5 {
+    padding: 5px;
+    margin-bottom: -20px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
     color: $secondary-color;
-    text-decoration: none;
   }
 
   &:hover {
@@ -250,15 +255,6 @@
     }
   }
 
-  h3,
-  p {
-    display: flex;
-    justify-content: flex-start;
-    font-size: 25px;
-    margin-bottom: 10px;
-    color: $primary-color;
-  }
-
   @keyframes gradientAnimation {
     to {
       transform: translateX(100%);
@@ -271,7 +267,80 @@
   height: auto;
 }
 
-// CARDS Skills 
+@media screen and (min-width: 481px) and (max-width: 1023px) {
+  .cards-container {
+    margin-top: 30px;
+  }
+
+  .proj-card {
+    flex: 0 0 calc(40% - 40px);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid $like-black;
+    border-radius: 10px;
+    background-color: $third-color;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    max-height: 500px;
+
+    h5 {
+      display: none;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: $primary-color;
+      text-align: center;
+    }
+    .img-proj {
+      width: 100%;
+      height: auto;
+      margin-top: -30px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cards-container {
+    margin-top: 30px;
+  }
+
+  .proj-card {
+    flex: 0 0 calc(50% - 40px);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid $like-black;
+    border-radius: 10px;
+    background-color: $third-color;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    max-height: 500px;
+    width: 150px;
+
+    h5 {
+      display: none;
+    }
+    .home-icon-container {
+      margin-top: 30px;
+    }
+    p {
+      font-size: 9px;
+      margin-bottom: 5px;
+      color: $primary-color;
+      text-align: center;
+    }
+    .img-proj {
+      width: 100%;
+      height: auto;
+      margin-top: -20px;
+    }
+  }
+}
+
+// CARDS Skills
 .cards {
   flex: 0 0 calc(20% - 20px);
   padding: 20px;
@@ -282,8 +351,6 @@
   position: relative;
   overflow: hidden;
   max-height: 500px;
-  transition: background-color 0.5s ease, opacity 0.5s ease,
-    max-height 0.5s ease;
 
   h5 {
     color: $secondary-color;
@@ -328,7 +395,7 @@
 .image-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 40px;
   justify-content: space-around;
   margin-left: 10px;
   color: $primary-color;
@@ -339,6 +406,9 @@
   width: calc(49% - 50px);
   height: auto;
   color: $like-black;
+  min-height: 100%;
+  min-width: 60px;
+  max-width: 90px;
 
   &:hover {
     transform: scale(1.05);
@@ -346,8 +416,94 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 1023px) {
+  .cards {
+    flex: 0 0 calc(90% - 40px);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid $like-black;
+    border-radius: 10px;
+    background-color: $third-color;
+    position: relative;
+    overflow: hidden;
+    max-height: 150px;
+
+    h3,
+    p {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: $primary-color;
+    }
+  }
+
+  .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    margin-left: 10px;
+    color: $primary-color;
+  }
+
   .image-container img {
-    width: 100%;
+    padding-top: 20px;
+    width: calc(20% - 50px);
+    height: auto;
+    color: $like-black;
+    min-width: 60px;
+    max-width: 90px;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cards {
+    flex: 0 0 calc(90% - 40px);
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid $like-black;
+    border-radius: 10px;
+    background-color: $third-color;
+    position: relative;
+    overflow: hidden;
+    max-height: 150px;
+
+    h3,
+    p {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: $primary-color;
+    }
+  }
+
+  .image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    justify-content: space-around;
+    margin-left: 10px;
+    color: $primary-color;
+  }
+
+  .image-container img {
+    padding-top: 20px;
+    width: calc(20% - 50px);
+    height: auto;
+    color: $like-black;
+    min-width: 55px;
+    max-width: 90px;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
   }
 }

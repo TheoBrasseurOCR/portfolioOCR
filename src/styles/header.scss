@@ -35,3 +35,23 @@ nav {
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 80%;
+    }
+  }
+}

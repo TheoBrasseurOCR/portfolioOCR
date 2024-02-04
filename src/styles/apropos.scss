@@ -39,5 +39,30 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInLeft 1s ease-in-out forwards,
+      slideInLeft 1s ease-in-out forwards;
+  }
 
+  .apropos-links {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    a {
+      margin: 0 10px;
+      color: $secondary-color;
+      text-decoration: none;
 
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

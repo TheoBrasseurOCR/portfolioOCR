@@ -1,8 +1,7 @@
 {
     "version": 2,
     "builds": [
-      { "src": "/src", "use": "@vercel/static-build" },
-   { "src": "/public", "use": "@vercel/static-build" },
-      { "src": "/backend", "use": "@vercel/node" }
+      { "src": "/", "use": "@vercel/static-build" }
     ]
   }
+  

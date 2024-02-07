@@ -11,8 +11,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Utiliser le middleware cors
-app.use(cors());
+// Utiliser le middleware cors pour accepter les requêtes POST
+app.use(cors({ methods: 'POST' }));
 
 // Configuration pour l'envoi d'e-mails avec nodemailer
 const transporter = nodemailer.createTransport({
@@ -23,13 +23,8 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const corsOptions = {
-    origin: 'https://mon-portfolio-sepia.vercel.app',  // Remplacez ceci par l'URL de votre application React
-    methods: 'POST',
-  };
-
 // Endpoint pour recevoir les données du formulaire
-app.post('/submit-form', cors(corsOptions), (req, res) => {
+app.post('/submit-form', (req, res) => {
   const formData = req.body;
 
   // Configuration du contenu de l'e-mail
@@ -53,7 +48,9 @@ app.post('/submit-form', cors(corsOptions), (req, res) => {
     }
     res.status(200).send('Formulaire soumis avec succès !');
   });
-});// Démarrage du serveur
+});
+
+// Démarrage du serveur
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Serveur en écoute sur le port ${PORT}`);

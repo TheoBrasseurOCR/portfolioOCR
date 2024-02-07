@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TheoBrasseurOCR/portfolioOCR/static/css/main.9812fbab.css",
+    "main.js": "/TheoBrasseurOCR/portfolioOCR/static/js/main.26cf986a.js",
+    "static/js/787.8f0eac1b.chunk.js": "/TheoBrasseurOCR/portfolioOCR/static/js/787.8f0eac1b.chunk.js",
+    "index.html": "/TheoBrasseurOCR/portfolioOCR/index.html",
+    "main.9812fbab.css.map": "/TheoBrasseurOCR/portfolioOCR/static/css/main.9812fbab.css.map",
+    "main.26cf986a.js.map": "/TheoBrasseurOCR/portfolioOCR/static/js/main.26cf986a.js.map",
+    "787.8f0eac1b.chunk.js.map": "/TheoBrasseurOCR/portfolioOCR/static/js/787.8f0eac1b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9812fbab.css",
+    "static/js/main.26cf986a.js"
+  ]
+}

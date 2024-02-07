@@ -24,7 +24,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const corsOptions = {
-    origin: 'https://voluble-crepe-48f6de.netlify.app/',  // Remplacez ceci par l'URL de votre application React
+    origin: 'http://localhost:3000',  // Remplacez ceci par l'URL de votre application React
     methods: 'POST',
   };
 

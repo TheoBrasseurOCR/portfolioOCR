@@ -31,7 +31,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:3001/submit-form', {
+      const response = await fetch('/submit-form', {  // Utilisation d'un chemin relatif pour l'appel fetch
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -12,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Utiliser le middleware cors pour accepter les requêtes POST
-app.use(cors({ methods: 'POST' }));
+app.use(cors());
 
 // Configuration pour l'envoi d'e-mails avec nodemailer
 const transporter = nodemailer.createTransport({
@@ -49,6 +47,9 @@ app.post('/submit-form', (req, res) => {
     res.status(200).send('Formulaire soumis avec succès !');
   });
 });
+
+// Gérer les requêtes OPTIONS pour les pré-vols CORS
+app.options('/submit-form', cors());
 
 // Démarrage du serveur
 const PORT = process.env.PORT || 3001;

@@ -24,7 +24,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const corsOptions = {
-    origin: 'http://localhost:3000',  // Remplacez ceci par l'URL de votre application React
+    origin: 'https://mon-portfolio-sepia.vercel.app',  // Remplacez ceci par l'URL de votre application React
     methods: 'POST',
   };
 

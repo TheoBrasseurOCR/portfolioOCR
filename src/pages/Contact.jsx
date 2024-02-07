@@ -34,7 +34,7 @@ const Contact = () => {
       const response = await fetch('https://mon-portfolio-nztasc01s-theoocrs-projects.vercel.app/submit-form', {  // Utilisation d'un chemin relatif pour l'appel fetch
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: JSON.stringify(formData),
       });

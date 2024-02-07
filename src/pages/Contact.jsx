@@ -56,7 +56,7 @@ const Contact = () => {
     <section className="contact">
       <div className="contact-container">
         {submitStatus !== 'success' && submitStatus !== 'error' && (
-          <form action="http://localhost:3001/submit-form" method="POST" onSubmit={handleSubmit}>
+          <form action="https://mon-portfolio-sepia.vercel.app/submit-form" method="POST" onSubmit={handleSubmit}>
             <label htmlFor="firstName">Prénom :</label>
             <input
               type="text"

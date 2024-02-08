@@ -6,7 +6,6 @@ const cors = require('cors');
 const app = express();
 
 // Middleware pour traiter les données du formulaire
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Utiliser le middleware cors pour accepter les requêtes POST

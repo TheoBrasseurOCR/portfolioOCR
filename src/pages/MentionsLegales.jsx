@@ -15,11 +15,11 @@ const MentionsLegales = () => {
       </p>
       <h1>Réalisation</h1>
       <p>
-        Ce site est réalisé par Théo Brasseur, theoocr@gmail.com, 0768064512.
+        Ce site est réalisé par Théo Brasseur.
       </p>
       <h1>Hébergement du site internet</h1>
       <p>
-        Ce site est hébergé par GitHub, 88 Colin P Kelly Jr St San Francisco, CA 94107, United States., (877) 448-4820, support@github.com.
+        Ce site est hébergé par Vercel, 440 N Barranca Ave #4133, Covina, CA 91723, USA., (951) 383-6898, support@vercel.com.
       </p>
     </div>
   );

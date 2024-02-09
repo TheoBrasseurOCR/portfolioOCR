@@ -12,10 +12,10 @@ const Apropos = () => {
         </div>
         {/* Ajoutez les liens ici */}
         <div className="apropos-links">
+        <a href="/cv.pdf" download>Télécharger mon CV</a>
           <Link to="/mentions-legales">Mentions Légales</Link>
           <Link to="/cgu">Conditions Générales d'Utilisation</Link>
           <Link to="/contact">Contact</Link>
-          <a href="/cv.pdf" download>Télécharger mon CV</a>
         </div>
       </div>
     </section>

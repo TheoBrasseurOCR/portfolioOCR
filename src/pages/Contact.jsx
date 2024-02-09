@@ -110,7 +110,6 @@ const Contact = () => {
           </form>
         )}
 
-        {/* Affichage du message en fonction du statut */}
         {submitStatus === 'success' && (
           <p style={{ color: '#34495e' }}>Formulaire soumis avec succès !</p>
         )}

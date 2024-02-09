@@ -15,6 +15,7 @@ const Apropos = () => {
           <Link to="/mentions-legales">Mentions Légales</Link>
           <Link to="/cgu">Conditions Générales d'Utilisation</Link>
           <Link to="/contact">Contact</Link>
+          <Link to="/contact">Télécharger mon CV</Link>
         </div>
       </div>
     </section>

@@ -31,7 +31,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch('https://portfolio-backend-gamma-three.vercel.app/submit-form', {  
+      const response = await fetch('https://portfolio-backend-gamma-three.vercel.app', {  
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -2,11 +2,10 @@ import React from 'react';
 import { Pcards } from '../components/Cards';
 
 const Projects = () => {
-  // Liste de vos projets avec les titres et chemins d'image
   const projectsList = [
     {
       title: 'Kasa',
-      imageSrc: 'images/kasalogo.png', // Remplacez par le chemin de votre image
+      imageSrc: 'images/kasalogo.png',
       link: './Kasa',
     },
     {
@@ -24,13 +23,11 @@ const Projects = () => {
       imageSrc: 'images/sblogo.png',
       link: './sophie-bluel',
     },
-    // Ajoutez autant de projets que nécessaire
   ];
 
   return (
     <div className="home-container">
       <div className="right-section">
-        {/* Section des cartes */}
         <div className="cards-container">
           {projectsList.map((project, index) => (
             <Pcards key={index} title={project.title} imageSrc={project.imageSrc} link={project.link} />

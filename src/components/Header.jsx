@@ -7,9 +7,9 @@ const Header = () => {
     // Configuration de l'animation Typed.js
     const options = {
       strings: ['Développeur Web Full-Stack'],
-      typeSpeed: 50, // Vitesse de frappe
-      backSpeed: 30, // Vitesse de suppression
-      showCursor: false, // Masquer le curseur
+      typeSpeed: 50,
+      backSpeed: 30,
+      showCursor: false,
       onComplete: (self) => {
         // Une fois l'animation de Typed.js terminée, afficher les liens
         const links = document.querySelectorAll('.header nav a');
@@ -24,7 +24,6 @@ const Header = () => {
     // Initialiser Typed.js sur l'élément h2
     const typed = new Typed('.typed-text', options);
 
-    // Nettoyer Typed.js lors du démontage du composant
     return () => {
       typed.destroy();
     };

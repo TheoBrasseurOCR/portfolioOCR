@@ -9,9 +9,7 @@ const Skills = () => {
   return (
     <div className="home-container">
       <div className="right-section">
-        {/* Section des cartes */}
         <div className="cards-container">
-          {/* Les trois cartes sont toujours ouvertes */}
           <Scards title="<Frontend />" images={frontendImages} />
           <Scards title="<Backend />" images={backendImages} />
           <Scards title="<Soft Skills />" images={softSkillsImages} />

@@ -6,19 +6,19 @@ const Contact = () => {
       <h1>Contactez moi</h1>
       <h2>Par mail</h2>
       <p>
-        - theobrasseurlille@hotmail.com
+        à <strong>theobrasseurlille@hotmail.com</strong>
       </p>
       <h2>Par Téléphone</h2>
       <p>
-      - 07-68-06-45-12
+      au <strong>07-68-06-45-12</strong>
       </p>
       <h2>Par voie postale</h2>
       <p>
-      - 27 rue aux Ours, ARRAS 62000, FRANCE.
+      au <strong>27 rue aux Ours, ARRAS 62000, FRANCE.</strong>
       </p>
       <h2>Et sur tous les réseaux sociaux</h2>
       <p>
-      - @TheoBrasseur
+      <strong>@TheoBrasseur</strong>
       </p>
     </div>
   );
